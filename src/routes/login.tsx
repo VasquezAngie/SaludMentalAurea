@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useAuth } from "../auth/AuthProvider";
 import { Navigate } from "react-router-dom";
 import { AuthResponse, AuthResponseError } from "../types/types";
-import "../css/login.css"; // Importar el archivo CSS
+import "../css/login.css"; 
 import  Layout from "../components/layout"
 
 export default function Login() {

@@ -12,9 +12,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       <main className="main-content">
         {children}
       </main>
-      <footer className="footer-container">
-        <Footer />
-      </footer>
+      <Footer/>
     </div>
   );
 }
