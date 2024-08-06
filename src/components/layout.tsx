@@ -1,7 +1,7 @@
 import React from "react";
-import "./layout.css"; // Importa el archivo CSS para los estilos del layout
-import Navbar from "./navbar"; // Asumiendo que tienes un componente Navbar
-import Footer from "./footer"; // Importa el componente Footer
+import "./layout.css"; 
+import Navbar from "./navbar"; 
+import Footer from "./footer"; 
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
