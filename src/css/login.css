@@ -1,13 +1,15 @@
 /* Login.css */
+
 .container {
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+  background-color: #f0f0f0; /* Color de fondo para la página */
 }
 
 .login-form {
-  max-width: 80%; /* Ajusta el ancho según tus necesidades */
+  max-width: 400px; /* Ajusta el ancho del formulario según tus necesidades */
   padding: 20px;
   border-radius: 15px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -52,17 +54,18 @@ label {
 }
 
 .submit-button {
-  width: 100%; /* El botón ocupa todo el ancho del contenedor */
-  padding: 12px 20px; /* Espaciado interno del botón */
-  border: none; /* Sin borde alrededor del botón */
-  border-radius: 4px; /* Bordes redondeados */
-  background-color: #e0f7fa; /* Color de fondo del botón */
-  color: white; /* Color del texto del botón */
-  font-size: 16px; /* Tamaño de la fuente del texto del botón */
-  cursor: pointer; /* Cambia el cursor cuando pasa sobre el botón */
-  transition: background-color 0.3s ease-in-out; /* Transición suave del color de fondo al pasar el mouse */
+  background-color: #d2f9ff;
+    color: #ffffff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out; /* Transición suave del color de fondo al pasar el mouse */
 }
 
 .submit-button:hover {
-  background-color: #e0f7fa; /* Color de fondo del botón cuando el mouse pasa sobre él */
+  background-color: #0056b3; /* Color de fondo del botón cuando el mouse pasa sobre él */
 }

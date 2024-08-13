@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useAuth } from "../auth/AuthProvider";
-import { Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import { AuthResponse, AuthResponseError } from "../types/types";
-import "../css/login.css"; 
-import  Layout from "../components/layout"
+import "../css/login.css";
+import Layout from "../components/layout";
 
 export default function Login() {
   const [username, setUsername] = useState("");
@@ -11,9 +11,10 @@ export default function Login() {
   const [errorResponse, setErrorResponse] = useState("");
 
   const auth = useAuth();
+  const navigate = useNavigate();
 
-  function handleChange(e: React.ChangeEvent) {
-    const { name, value } = e.target as HTMLInputElement;
+  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
+    const { name, value } = e.target;
     if (name === "username") {
       setUsername(value);
     }
@@ -34,6 +35,21 @@ export default function Login() {
         const json = (await response.json()) as AuthResponse;
         if (json.body.accessToken && json.body.refreshToken) {
           auth.saveUser(json);
+
+          const userRole = json.body.role; 
+          switch (userRole) {
+            case "admin":
+              navigate("/admin/dashboard");
+              break;
+            case "user":
+              navigate("/user/home");
+              break;
+            case "recepcionist":
+              navigate("/recepcionist/home");
+              break;
+            case "doctor":
+              navigate("/doctor/home");
+          }
         }
       } else {
         const json = (await response.json()) as AuthResponseError;
@@ -49,7 +65,7 @@ export default function Login() {
   }
 
   return (
-    <Layout> {/* Utiliza el Layout aquí */}
+    <Layout>
       <div className="login-container">
         <form onSubmit={handleSubmit} className="login-form">
           <h1>Login</h1>
@@ -68,7 +84,9 @@ export default function Login() {
             onChange={handleChange}
             value={password}
           />
-          <button type="submit"> Iniciar sesión </button>
+          <button type="submit" className="navbar-login-button">
+            Iniciar sesión
+          </button>
         </form>
       </div>
     </Layout>
