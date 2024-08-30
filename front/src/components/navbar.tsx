@@ -24,7 +24,7 @@ const Navbar: React.FC = () => {
       </ul>
       <div className="navbar-right">
         <Link to="/login" className="navbar-login-button">
-          Iniciar sesión
+          Cerrar sesión
         </Link>
       </div>
     </nav>

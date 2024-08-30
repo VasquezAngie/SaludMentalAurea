@@ -5,9 +5,9 @@ import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Login from './routes/login.tsx'
 import Signup from './routes/logout.tsx'
-import Dashboard from './routes/dashboard.tsx'
 import ProtectedRoute from './routes/protectecRoute.tsx'
 import PrincipalPage from './routes/principalPage.tsx'
+import Dashboard from './routes/Patient/dashboard.tsx'
 
 
 const router = createBrowserRouter([
@@ -19,12 +19,13 @@ const router = createBrowserRouter([
     path: "/login",
     element: <Login />,
   },
+
   {
     path: "/signup",
     element: <Signup />,
   },
   {
-    path: "/",
+    path: "/dashboard",
     element: <ProtectedRoute />,
     children: [
       {
